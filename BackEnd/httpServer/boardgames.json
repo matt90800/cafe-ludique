@@ -1,0 +1,94 @@
+{
+    "games": [
+      {
+        "title": "Catan",
+        "year": 1995,
+        "genre": "Strategy, Board Game",
+        "designer": "Klaus Teuber",
+        "players": "3-4",
+        "image": "https://i.imgur.com/LL6U59q.jpg",
+        "info": "Catan, previously known as The Settlers of Catan, is a multiplayer board game designed by Klaus Teuber and first published in 1995 in Germany by Franckh-Kosmos Verlag (Kosmos) as Die Siedler von Catan. The game's objective is to settle on the island of Catan, which is randomly generated each time the game is played, and to compete with other players to gather resources, build settlements, and establish a trade network."
+      },
+      {
+        "title": "Ticket to Ride",
+        "year": 2004,
+        "genre": "Strategy, Board Game",
+        "designer": "Alan R. Moon",
+        "players": "2-5",
+        "image": "https://i.imgur.com/1OL20Yz.jpg",
+        "info": "Ticket to Ride is a railway-themed strategy board game designed by Alan R. Moon and published by Days of Wonder in 2004. The game is set on a map of North America, and players compete to connect different cities by building railways. The game is won by the player who has the most points at the end of the game, which are earned by completing routes and connecting cities."
+      },
+      {
+        "title": "Pandemic",
+        "year": 2008,
+        "genre": "Cooperative, Board Game",
+        "designer": "Matt Leacock",
+        "players": "2-4",
+        "image": "https://i.imgur.com/xhQrZhq.jpg",
+        "info": "Pandemic is a cooperative board game designed by Matt Leacock and published by Z-Man Games in 2008. The game is set in a world where several diseases have broken out and players must work together to find cures and prevent the spread of the diseases. Players must travel around the world, treating infected areas and researching cures for each disease before they become too widespread."
+      },
+      {
+        "title": "Codenames",
+        "year": 2015,
+        "genre": "Word Game, Party Game",
+        "designer": "Vlaada Chvátil",
+        "players": "2-8+",
+        "image": "https://i.imgur.com/ImwH6qx.jpg",
+        "info": "Codenames is a word-based party game designed by Vlaada Chvátil and published by Czech Games Edition in 2015. The game is played in teams, and players take turns giving one-word clues to try to get their teammates to guess which words on the board correspond to their team's agents. The game is won by the team that successfully identifies all their agents before the other team."
+      },
+      {
+        "title": "Azul",
+        "year": 2017,
+        "genre": "Abstract Strategy, Tile Game",
+        "designer": "Michael Kiesling",
+        "players": "2-4",
+        "image": "https://i.imgur.com/NUlgNwa.jpg",
+        "info": "Azul is an abstract strategy tile game designed by Michael Kiesling and published by Plan B Games in 2017. In the game, players compete to collect sets of colored tiles and place themstrategically on their game board. Points are earned for completing rows and columns, and for placing tiles adjacent to other tiles of the same color. The game is won by the player with the most points at the end of the game."
+        },
+        {
+        "title": "Splendor",
+        "year": 2014,
+        "genre": "Strategy, Card Game",
+        "designer": "Marc André",
+        "players": "2-4",
+        "image": "https://i.imgur.com/ukbfDpP.jpg",
+        "info": "Splendor is a strategy card game designed by Marc André and published by Space Cowboys in 2014. The game is set during the Renaissance, and players compete to collect gems and develop their own gem trading business. The game is won by the player who has the most prestige points at the end of the game, which are earned by collecting gems and developing their business."
+        },
+        {
+        "title": "7 Wonders",
+        "year": 2010,
+        "genre": "Strategy, Card Game",
+        "designer": "Antoine Bauza",
+        "players": "2-7",
+        "image": "https://i.imgur.com/0Sf5px6.jpg",
+        "info": "7 Wonders is a strategy card game designed by Antoine Bauza and published by Repos Production in 2010. The game is set during ancient times, and players compete to build the best civilization by collecting resources, developing their military and scientific capabilities, and building wonders of the world. The game is won by the player with the most victory points at the end of the game."
+        },
+        {
+        "title": "Gloomhaven",
+        "year": 2017,
+        "genre": "Cooperative, Campaign Game",
+        "designer": "Isaac Childres",
+        "players": "1-4",
+        "image": "https://i.imgur.com/pIc2Qfj.jpg",
+        "info": "Gloomhaven is a cooperative campaign game designed by Isaac Childres and published by Cephalofair Games in 2017. The game is set in a dark and mysterious world, and players must work together to explore dungeons, fight monsters, and complete quests. The game features a deep storyline, character development, and a unique card-driven combat system."
+        },
+        {
+        "title": "Scythe",
+        "year": 2016,
+        "genre": "Strategy, Board Game",
+        "designer": "Jamey Stegmaier",
+        "players": "1-5",
+        "image": "https://i.imgur.com/cISyyvS.jpg",
+        "info": "Scythe is a strategy board game designed by Jamey Stegmaier and published by Stonemaier Games in 2016. The game is set in an alternate history 1920s Europe, and players compete to build their own empire by gathering resources, building structures, and deploying mechs. The game is won by the player with the most points at the end of the game, which are earned by completing objectives and building structures."
+        },
+        {
+        "title": "Betrayal at Baldur's Gate",
+        "year": 2017,
+        "genre": "Horror, Adventure, Board Game",
+        "designer": "Chris Dupuis, Mike Mearls, Peter Lee",
+        "players": "3-6",
+        "image": "https://i.imgur.com/sYbJyyi.jpg",
+        "info": "Betrayal at Baldur's Gate is a horror-adventure board game designed by Chris Dupuis, Mike Mearls, and Peter Lee and published by Wizards of the Coast in 2017. The game is set in the city of Baldur's Gate and players take on the roles of adventurers exploring a haunted mansion. As the game progresses, one player becomes the betrayer and turns on the others, leading to a thrilling showdown between the heroes and the traitor. The game features a wide range of scenarios and outcomes, making each playthrough unique."
+        }
+    ]
+}
