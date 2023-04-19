@@ -1,6 +1,7 @@
 Voici un guide pour créer une clé SSL et l'ajouter en format PKCS#12 à Firefox :
 
 -Ouvrez un terminal bash.
+
     Déplacez vous avec cd jusqu'à la racine de votre projet.
 
 -Générez une paire de clés privées/publiques à l'aide de la commande keytool :
@@ -8,12 +9,14 @@ Voici un guide pour créer une clé SSL et l'ajouter en format PKCS#12 à Firefo
     keytool -genkeypair -alias localJson -keyalg RSA -keysize 2048 -validity 365 -keystore mykeystore.jks
 
 ou openssl(non testé) :
+
     openssl req -x509 -newkey rsa:4096 -keyout localJson.key -out localJson.crt -days 365
 
 
 Répondez aux questions que vous serez invité à fournir pour remplir les informations de la demande de certificat.
 
-Executez la commande suivante si vous souhaitez lire  les clées.
+Executez la commande suivante si vous souhaitez lire  les clés.
+
     keytool -list -v -keystore mykeystore.jks
 
 
@@ -28,8 +31,10 @@ ou openssh(non testé)
 
 Vous serez invité à fournir un mot de passe pour le fichier PKCS#12, assurez-vous de le noter car vous en aurez besoin pour importer le certificat dans Firefox.
 
-Ouvrez Firefox et allez dans les paramètres de sécurité en tapant 
+Ouvrez Firefox et allez dans les paramètres de sécurité en tapant  
+
     about:preferences#privacy
+
 dans la barre d'adresse.
 
 Sous "Certificats", cliquez sur "Vos certificats".
@@ -46,7 +51,9 @@ Cliquez sur "OK" pour terminer l'importation.
 
 Cliquez sur "Serveurs" puis "Ajouter une exception..." pour ouvrir l'assistant d'exception.
 Tapez l'URL du site :
+
     https://localhost:8443
+    
 Puis cliquez sur "Obtenir le certificat"
 Confirmez pour fermer la fenetre.
 
