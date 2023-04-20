@@ -1,5 +1,6 @@
 const API_KEY = 'ekqy5rdgWnrr11Hl-QisrP6PikE2kwuOh1cE0Fk_pfk';
-const API_URL = 'https://api.unsplash.com/search/photos?page=1&query=Catan';
+let searchTitle="Ticket to Ride";
+const API_URL = `https://api.unsplash.com/search/photos?page=1&query=${searchTitle}`;
 
 headers = {
     headers: {
@@ -9,18 +10,21 @@ headers = {
     }
     }
 
-//const fetchUnsplash=(url)=>
-    fetch(API_URL,headers )
-    .then(response => response.json())
-    .then(data => {
-        if (data.results!=null)
-            data=data.results;
-        data.forEach(
-        element=>{
-            img=element.urls.regular;
-            console.log(img)
-        })})
-    .catch(error => console.error(error));
+    const fetchUnsplash = (search) => {
+        const imageUrls = [];
+        searchTitle = search;
+        return fetch(API_URL, headers)
+          .then(response => response.json())
+          .then(data => {
+            if (data.results != null)
+              data = data.results;
+            data.forEach(element => {
+              imageUrls.push(element.urls.regular);
+            });
+            return imageUrls;
+          })
+          .catch(error => console.error(error));
+      }
 
 
 
@@ -40,8 +44,11 @@ fetch("http://localhost:8000/")
 
 
 const main = document.querySelector("main");
-const createGameCard = (element)=>{
-    
+const createGameCard =async (element)=>{
+    let rand=Math.round(Math.random()*10);
+    await fetchUnsplash(element.title).then(img => {
+        element.image=img[rand];
+    });
 
     const card = document.createElement("div");
     card.className="card col-4";
