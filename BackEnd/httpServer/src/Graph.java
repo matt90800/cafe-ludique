@@ -54,6 +54,7 @@ public class Graph extends JPanel{
             }
             case ("HTTPS") -> {
                 {
+
                     startListener = e -> {
                         // Démarrage du serveur HTTPS
                         int port = Integer.parseInt(this.textField.getText());

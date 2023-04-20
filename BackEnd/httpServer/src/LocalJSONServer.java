@@ -21,8 +21,14 @@ import com.sun.net.httpserver.*;
 
 public class LocalJSONServer {
     static JFrame frame;
+    static Path jsonPath;
+    static String fileType;
+    JPanel mainPanel = new JPanel();
+    JButton httpButton =new JButton("Create HTTP server"); // Define the action
+    JButton httpsButton=new JButton("Create HTTPS server");
+    JButton chooseFile=new JButton("ChooseFile");
+    TextField textField=new TextField("format");
     public static void main(String[] args) throws Exception {
-
         if (GraphicsEnvironment.isHeadless()) {
             System.out.println("This is a headless computer.");
         } else {
@@ -33,10 +39,13 @@ public class LocalJSONServer {
             JPanel mainPanel = new JPanel();
             JButton httpButton =new JButton("Create HTTP server"); // Define the action
             JButton httpsButton=new JButton("Create HTTPS server");
-            Path jsonPath = Paths.get("boardgames.json");
-            String fileType="json";
+            JButton chooseFile=new JButton("ChooseFile");
+            TextField textField=new TextField("format");
+
             mainPanel.add(httpButton);
             mainPanel.add(httpsButton);
+            mainPanel.add(chooseFile);
+            mainPanel.add(textField);
             httpButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -51,6 +60,14 @@ public class LocalJSONServer {
                     contentPane.add(new Graph("HTTPS",jsonPath,fileType).panel,1);
                     frame.pack();
                 }
+            });
+            chooseFile.addActionListener((e)->{
+                JFileChooser choose = new JFileChooser();
+                jsonPath = choose.showOpenDialog(null)==JFileChooser.APPROVE_OPTION ?Paths.get(choose.getSelectedFile().getPath()) : Paths.get("boardgames.json");
+                String[] tbl = jsonPath.toString().split("\\.");
+                fileType=tbl[tbl.length-1];
+                System.out.println(jsonPath + " "+fileType);
+                textField.setText(fileType);
             });
 
             contentPane.add(mainPanel);

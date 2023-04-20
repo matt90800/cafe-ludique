@@ -1,4 +1,4 @@
-Voici un guide pour créer une clé SSL et l'ajouter en format PKCS#12 à Firefox :
+#Créer une clé SSL et l'ajouter en format PKCS#12 à Firefox :
 
 -Ouvrez un terminal bash.
 
@@ -60,3 +60,38 @@ Confirmez pour fermer la fenetre.
 Votre certificat est maintenant prêt à être utilisé avec Firefox.
 
 N'oubliez pas que ce certificat n'est pas émis par une autorité de certification publique, donc il ne sera pas reconnu comme valide par tous les navigateurs et applications. Il est destiné à être utilisé uniquement à des fins de développement et de test en local.
+
+
+
+
+
+#Compiler un fichier WAR via la ligne de commande
+
+Ce guide explique comment compiler un fichier WAR via la ligne de commande en utilisant l'outil "jar" fourni avec la JDK de Java.
+Étapes
+
+    Assurez-vous que votre application web est configurée correctement et qu'elle contient tous les fichiers nécessaires. En particulier, vous devez avoir un fichier "web.xml" dans le dossier "WEB-INF" de votre application, ainsi que toutes les classes et bibliothèques nécessaires.
+
+    Ouvrez une invite de commande ou un terminal et accédez au dossier racine de votre application web.
+
+    Utilisez la commande "jar" pour créer le fichier WAR. Voici la syntaxe de base :
+
+jar -cvf NomFichier.war *
+
+    "jar" est le nom de l'outil.
+    "-c" indique que nous allons créer un nouveau fichier JAR.
+    "-v" indique que nous voulons afficher des informations détaillées sur les fichiers ajoutés au fichier WAR.
+    "-f" indique que nous allons spécifier un nom de fichier pour le fichier WAR.
+    "NomFichier.war" est le nom que vous souhaitez donner à votre fichier WAR.
+    "*" indique que nous voulons inclure tous les fichiers du dossier courant dans le fichier WAR.
+
+Par exemple, si votre application web est dans un dossier nommé "MonApp" et que vous souhaitez créer un fichier WAR nommé "MonApp.war", vous pouvez utiliser la commande suivante :
+
+    jar -cvf MonApp.war MonApp/*
+
+    Cette commande créera un fichier WAR nommé "MonApp.war" qui contient tous les fichiers du dossier "MonApp".
+
+    Attendez que la commande "jar" se termine et vérifiez que le fichier WAR a été créé avec succès.
+
+Vous pouvez maintenant déployer votre fichier WAR sur un serveur d'applications Java EE pour exécuter votre application web.
+	

@@ -24,13 +24,51 @@ public interface Server {
         video/mp4 : fichier vidéo MP4
         application/pdf : fichier PDF
         application/zip : archive ZIP*/
+        String content;
+        switch (LocalJSONServer.fileType){
+            case "txt":
+                content = "text/plain";
+                break;
+            case "html":
+                content = "text/html";
+                break;
+            case "js":
+                content = "application/javascript";
+                break;
+            case "json":
+                content = "application/json";
+                break;
+            case "xml":
+                content = "application/xml";
+                break;
+            case "jpeg":
+                content = "image/jpeg";
+                break;
+            case "png":
+                content = "image/png";
+                break;
+            case "mp3":
+                content = "audio/mpeg";
+                break;
+            case "mp4":
+                content = "video/mp4";
+                break;
+            case "pdf":
+                content = "application/pdf";
+                break;
+            case "zip":
+                content = "application/zip";
+                break;
+            default:
+                content = "application/octet-stream";
+        }
 
-        Path jsonPath = Paths.get("boardgames.json");
-        byte[] data = Files.readAllBytes(jsonPath);
+
+        byte[] data = Files.readAllBytes(LocalJSONServer.jsonPath);
         return exchange -> {
             // Définition des entêtes HTTP pour la réponse
             exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*"); // Autorisation de tous les domaines à accéder à la ressource
-            exchange.getResponseHeaders().set("Content-Type", "application/json");
+            exchange.getResponseHeaders().set("Content-Type", content);
             exchange.getResponseHeaders().set("Content-Length", String.valueOf(data.length));
 
             // Envoi de la réponse HTTP avec le contenu JSON
