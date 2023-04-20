@@ -1,10 +1,46 @@
 .coffee-image{
-    height: 80vh;
+    height: 35vw;
     margin: 0;
     padding: 0;
     background:no-repeat center ;
-    
     background-repeat: no-repeat;
     background-size: cover;
     background-image:url("img/coffeeBackground.jpg")
+}
+nav{
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+
+@media (max-width: 800px) {
+    #coffeeDescriptionImage{
+        display: none;
+    }
+    #coffeeDescription{
+       background-image:url('img/coffeeImg.jpg')
+    }
+    
+    #coffeeDescriptionSubDiv{
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.4);
+
+    }
+    
+    #coffeeDescriptionSubDiv h3{
+        color: white;
+    }
+    #coffeeDescriptionSubDiv h4{
+        color: white;
+    }
+    #coffeeDescriptionSubDiv p{
+        color: white;
+    }
+    }
+
+
+
+.offcanvas{
+    max-width: 90% !important;
+    /* width: 90% !important; */
+    /* media query pour adapter la taille du canevas nécessaires */
 }

@@ -10,130 +10,136 @@
 </head>
 <body>
   <header class="bg-dark text-white">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 text-secondary">Accueil</a></li>
-        <li><a href="boardgames.html" class="nav-link px-2 text-white">Nos jeux</a></li>
-        <li><a href="borrow.html" class="nav-link px-2 text-white">Emprunter un jeu</a></li>
-        <li><a href="#" class="nav-link px-2 text-white" hidden>FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 text-white" hidden>About</a></li>
-      </ul>
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-0">
-        <input id="search" type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-      </form>
-      
-      <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2" hidden>Login</button > 
-          <button type="button" class="btn btn-warning" hidden>Sign-up</button>
+    <div class="coffee-image">
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <a class="navbar-brand" href="#">Le Café des Gaulois Provençaux</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav mr-auto ms-5">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="boardgames.html">Nos jeux</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="borrow.html">Emprunter un jeu</a>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
         </div>
-      </div>
-      <h1 class="d-flex justify-content-center">Le Café des Gaulois Provençaux</h1>
-      <div class="coffee-image" ></div>
-    </header>
+      </nav>
+    </div>
     
-    <main class="pt-5 pb-5 bg-light ">
-      <div class="container">
-        <section class="row">
-          <img class="col-6 img fluid" src="img/coffeeImg.jpg" alt="coffee-image">
-          <div class="col-6">
-            <h3>Bienvenue dans notre café ludique</h3>
-            <p>Un lieu unique où la bonne humeur, la convivialité et les jeux sont à l'honneur !</p>
-            <h4>Notre sélection de jeux</h4>
-            <p>Notre café est conçu pour vous offrir une expérience inoubliable, où vous pourrez vous détendre tout en jouant à une grande variété de jeux de société, de cartes, de rôle, de stratégie et de jeux vidéo. Nous sommes fiers de vous offrir un choix exceptionnel de jeux, allant des classiques aux plus modernes, et nous sommes toujours à la recherche de nouveaux jeux pour vous garantir une expérience de jeu passionnante.</p>
-            <h4>Nos espaces de détente</h4>
-            <p>Que vous veniez en solo, entre amis ou en famille, vous trouverez chez nous un espace chaleureux et accueillant, où vous pourrez vous détendre avec un bon café, une boisson fraîche ou une petite collation, tout en jouant à vos jeux préférés.</p>
-            <h4>Notre équipe passionnée</h4>
-            <p>Notre équipe est passionnée par les jeux et nous sommes là pour vous aider à choisir le jeu parfait pour vous, vous conseiller sur les règles ou vous aider à organiser des événements spéciaux. Alors, n'hésitez plus et rejoignez-nous pour une soirée pleine de rires, d'amusement et de jeux !</p>
-          </div>
-        </section>  
-        <section>
-          <h2>Carte</h2>
+      <!--       <div class="coffee-image"></div>
+      -->    </header>
+      
+      <main class="pt-5 pb-5 bg-light ">
+        <div class="container">
+          <section class="row" id="coffeeDescription">
+            <img class="col-6 img fluid" id="coffeeDescriptionImage" src="img/coffeeImg.jpg" alt="coffee-image">
+            <div class="col-6" id="coffeeDescriptionSubDiv">
+              <h3><b><u>Bienvenue dans notre café ludique.</u></b></h3>
+              <p>Un lieu unique où la bonne humeur, la convivialité et les jeux sont à l'honneur !</p>
+              <h4><u>Notre sélection de jeux.</u></h4>
+              <p>Notre café est conçu pour vous offrir une expérience inoubliable, où vous pourrez vous détendre tout en jouant à une grande variété de jeux de société, de cartes, de rôle, de stratégie et de jeux vidéo. Nous sommes fiers de vous offrir un choix exceptionnel de jeux, allant des classiques aux plus modernes, et nous sommes toujours à la recherche de nouveaux jeux pour vous garantir une expérience de jeu passionnante.</p>
+              <h4><u>Nos espaces de détente.</u></h4>
+              <p>Que vous veniez en solo, entre amis ou en famille, vous trouverez chez nous un espace chaleureux et accueillant, où vous pourrez vous détendre avec un bon café, une boisson fraîche ou une petite collation, tout en jouant à vos jeux préférés.</p>
+              <h4><u>Notre équipe passionnée.</u></h4>
+              <p>Notre équipe est passionnée par les jeux et nous sommes là pour vous aider à choisir le jeu parfait pour vous, vous conseiller sur les règles ou vous aider à organiser des événements spéciaux. Alors, n'hésitez plus et rejoignez-nous pour une soirée pleine de rires, d'amusement et de jeux !</p>
+            </div>
+          </section>  
           <section>
-            <div class="row">
-              <div class="card col-4">
-                <h5 class="card-title">Gâteau au chocolat</h5>
-                <img class="card-img-top" src="gateau1.jpg" alt="Gâteau au chocolat">
+            <h2>Carte</h2>
+            <section>
+              <div class="row">
+                <div class="card col-4">
+                  <h5 class="card-title">Gâteau au chocolat</h5>
+                  <img class="card-img-top" src="gateau1.jpg" alt="Gâteau au chocolat">
                   <p class="price">$4.99</p>
                   <p class="description">Un délicieux gâteau au chocolat fait maison.</p>
                 </div>
-              <div class="card col-4">
-                <h5 class="card-title">Tarte aux pommes</h5>
-                <img class="card-img-top" src="gateau1.jpg" alt="Tarte aux pommes">
+                <div class="card col-4">
+                  <h5 class="card-title">Tarte aux pommes</h5>
+                  <img class="card-img-top" src="gateau1.jpg" alt="Tarte aux pommes">
                   <p class="price">$3.99</p>
                   <p class="description">Une tarte aux pommes croustillante et savoureuse.</p>
-              </div>
-              <div class="card col-4">
-                <h5 class="card-title">Tiramisu</h5>
-                <img class="card-img-top" src="gateau1.jpg" alt="Tiramisu">
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Tiramisu</h5>
+                  <img class="card-img-top" src="gateau1.jpg" alt="Tiramisu">
                   <p class="price">$5.99</p>
                   <p class="description">Un dessert italien classique au café et mascarpone.</p>
                 </div>
-              <div class="card col-4">
-                <h5 class="card-title">Crème brûlée</h5>
-                <img class="card-img-top" src="gateau1.jpg" alt="Crème brûlée">
+                <div class="card col-4">
+                  <h5 class="card-title">Crème brûlée</h5>
+                  <img class="card-img-top" src="gateau1.jpg" alt="Crème brûlée">
                   <p class="price">$4.49</p>
                   <p class="description">Un dessert français élégant à la vanille et à la croûte croustillante.</p>
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Tapas au fromage</h5>
+                  <img class="card-img-top" src="tapas-fromage.jpg" alt="Tapas au fromage">
+                  <p class="price">$7.99</p>
+                  <p class="description">Assortiment de tapas au fromage et aux olives.</p>
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Tapas de poisson</h5>
+                  <img class="card-img-top" src="tapas-poisson.jpg" alt="Tapas de poisson">
+                  <p class="price">$9.99</p>
+                  <p class="description">Assortiment de tapas de poisson mariné.</p>
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Tapas de viande</h5>
+                  <img class="card-img-top" src="tapas-viande.jpg" alt="Tapas de viande">
+                  <p class="price">$8.99</p>
+                  <p class="description">Assortiment de tapas de viande grillée.</p>
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Tapas végétariens</h5>
+                  <img class="card-img-top" src="tapas-vegetariens.jpg" alt="Tapas végétariens">
+                  <p class="price">$6.99</p>
+                  <p class="description">Assortiment de tapas végétariens variés.</p>
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Coca-Cola</h5>
+                  <img class="card-img-top" src="coca-cola.jpg" alt="Coca-Cola">
+                  <p class="price">$2.49</p>
+                  <p class="description">Boisson rafraîchissante au cola.</p>
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Jus d'orange</h5>
+                  <img class="card-img-top" src="jus-orange.jpg" alt="Jus d'orange">
+                  <p class="price">$3.49</p>
+                  <p class="description">Jus d'orange frais pressé.</p>
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Bière blonde</h5>
+                  <img class="card-img-top" src="biere-blonde.jpg" alt="Bière blonde">
+                  <p class="price">$4.99</p>
+                  <p class="description">Bière blonde pression.</p>
+                </div>
+                <div class="card col-4">
+                  <h5 class="card-title">Vin rouge</h5>
+                  <img class="card-img-top" src="vin-rouge.jpg" alt="vin-rouge">
+                  <p class="price">$4.99</p>
+                  <p class="description">Verre de vin rouge.</p>
+                </div>
               </div>
-              <div class="card col-4">
-                    <h5 class="card-title">Tapas au fromage</h5>
-                    <img class="card-img-top" src="tapas-fromage.jpg" alt="Tapas au fromage">
-                    <p class="price">$7.99</p>
-                    <p class="description">Assortiment de tapas au fromage et aux olives.</p>
-                  </div>
-                  <div class="card col-4">
-                    <h5 class="card-title">Tapas de poisson</h5>
-                    <img class="card-img-top" src="tapas-poisson.jpg" alt="Tapas de poisson">
-                    <p class="price">$9.99</p>
-                    <p class="description">Assortiment de tapas de poisson mariné.</p>
-                  </div>
-                  <div class="card col-4">
-                    <h5 class="card-title">Tapas de viande</h5>
-                    <img class="card-img-top" src="tapas-viande.jpg" alt="Tapas de viande">
-                    <p class="price">$8.99</p>
-                    <p class="description">Assortiment de tapas de viande grillée.</p>
-                  </div>
-                  <div class="card col-4">
-                    <h5 class="card-title">Tapas végétariens</h5>
-                    <img class="card-img-top" src="tapas-vegetariens.jpg" alt="Tapas végétariens">
-                    <p class="price">$6.99</p>
-                    <p class="description">Assortiment de tapas végétariens variés.</p>
-                  </div>
-                  <div class="card col-4">
-                    <h5 class="card-title">Coca-Cola</h5>
-                    <img class="card-img-top" src="coca-cola.jpg" alt="Coca-Cola">
-                    <p class="price">$2.49</p>
-                    <p class="description">Boisson rafraîchissante au cola.</p>
-                  </div>
-                  <div class="card col-4">
-                    <h5 class="card-title">Jus d'orange</h5>
-                    <img class="card-img-top" src="jus-orange.jpg" alt="Jus d'orange">
-                    <p class="price">$3.49</p>
-                    <p class="description">Jus d'orange frais pressé.</p>
-                  </div>
-                  <div class="card col-4">
-                    <h5 class="card-title">Bière blonde</h5>
-                    <img class="card-img-top" src="biere-blonde.jpg" alt="Bière blonde">
-                    <p class="price">$4.99</p>
-                    <p class="description">Bière blonde pression.</p>
-                  </div>
-                  <div class="card col-4">
-                    <h5 class="card-title">Vin rouge</h5>
-                    <img class="card-img-top" src="vin-rouge.jpg" alt="vin-rouge">
-                    <p class="price">$4.99</p>
-                    <p class="description">Verre de vin rouge.</p>
-                  </div>
-            </div>
+            </section>
+            
           </section>
-          
-        </section>
-      </main>
-    </div>
-    <footer class="p-3 bg-dark text-white">
-      <p>Copyright © 2023 Café Ludique
-      </p>
-    </footer>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  </body>
-  </html>
-  
+        </main>
+      </div>
+      <footer class="p-3 bg-dark text-white">
+        <p>Copyright © 2023 Café Ludique
+        </p>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    
