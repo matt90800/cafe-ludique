@@ -1,15 +1,17 @@
-const search =document.querySelector(".form-control");
-let div=null;
-//on crée l'element et on le superpose au search
-if(document.querySelector("#searchFront")==null) {
-  div=document.createElement("div");
-  div.id="searchFront";
-  search.append(div);
-  console.log("div créé")
+const search =document.querySelector("#search");
+const label=document.querySelector("#searchLabel");;
+//on ne lance le script que si la balise existe
+if(label!=null) {
+  console.log("balise label trouvée")
+  let firstLog=true;
+  search.addEventListener("input",(e)=>{
+    if(firstLog){
+      console.log("eventListener inputSearch ok");
+      firstLog=false ;
+    }
+    const searchValue =search.value;
+    console.log(searchValue)
+    label.innerHTML="Saisie Prédictive à implémenter"
+    /* entrée pour valider et tabulation pour changer d'entrées */
+  });
 }
-
-div.width =search.clientWidth;
-div.innerHTML
-search.addEventListener("input",(e)=>{
-
-})

@@ -9,7 +9,7 @@
     left: 11px;
     margin: auto;
     color: #888;
-    color: grey !important;
+    color: red !important;
     font-size: 100%;
     opacity: 0.5;
     pointer-events: none;
