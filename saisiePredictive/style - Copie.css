@@ -1,0 +1,25 @@
+.input-container {
+    position: relative;
+  }
+  
+  #searchLabel {
+    content: 'Enter a search term';
+    position: absolute;
+    top: 18%;
+    left: 11px;
+    margin: auto;
+    color: #888;
+    font-size: 96%;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  #search {
+
+    width: 200px;
+    height: 30px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
