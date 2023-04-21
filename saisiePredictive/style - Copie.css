@@ -5,11 +5,12 @@
   #searchLabel {
     content: 'Enter a search term';
     position: absolute;
-    top: 18%;
+    top: 11%;
     left: 11px;
     margin: auto;
     color: #888;
-    font-size: 96%;
+    color: grey !important;
+    font-size: 100%;
     opacity: 0.5;
     pointer-events: none;
   }
