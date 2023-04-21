@@ -1,4 +1,7 @@
-const API_KEY = 'ekqy5rdgWnrr11Hl-QisrP6PikE2kwuOh1cE0Fk_pfk';
+const API_URL="https://api.npoint.io/33fe536f3a3bc2f018fb";
+
+//---------------------   Unsplash API ---------------------------//
+const API_KEY = null;
 const NAV_URL_COMP=`&client_id=${API_KEY}`;
 let searchTitle/* ="Ticket to Ride" */;
 
@@ -30,14 +33,14 @@ const fetchUnsplash = (search) => {
         .catch(error => console.error(error));
       }
 
+//---------------------                ---------------------------//
 
 
 
-fetch("https://api.npoint.io/33fe536f3a3bc2f018fb")
+fetch(API_URL)
     .then(response => response.json())
     .then(json=>{
         json=json.games;
-        console.log(json)
         json.forEach(
             element => {
                 createGameCard(element);
@@ -49,12 +52,12 @@ fetch("https://api.npoint.io/33fe536f3a3bc2f018fb")
 
 const main = document.querySelector("main");
 const createGameCard =async (element)=>{
+  if (API_KEY!=null){
     let rand=Math.round(Math.random()*10);
-    console.log(element.title)
     await fetchUnsplash(element.title).then(img => {
-      console.log(img)
         element.image=img[rand];
     });
+  }
 
     const card = document.createElement("div");
     card.content=element;
@@ -74,7 +77,6 @@ const createGameCard =async (element)=>{
     const updateOffcanvas=(HTMLcard)=>{
         const card=HTMLcard.content;
         let offcanvas = document.querySelector("#offcanvas");
-        console.log(offcanvas.querySelector("#offcanvasTitle"))
         offcanvas.querySelector("#offcanvasTitle").innerText=card.title
         offcanvas.querySelector("#offcanvasImage").src=card.image
         offcanvas.querySelector("#offcanvasInfo").innerText=card.info
@@ -97,7 +99,6 @@ const createGameCard =async (element)=>{
     ["click"].forEach(event => {
         card.addEventListener(event, () => {
             updateOffcanvas(card)
-          console.log(localStorage.getItem("card"))
         });
       });
       
@@ -116,5 +117,4 @@ const createGameCard =async (element)=>{
 
     main.append(card);
 }
-
 

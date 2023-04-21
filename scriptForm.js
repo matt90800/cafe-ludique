@@ -1,3 +1,7 @@
+const API_URL="https://api.npoint.io/33fe536f3a3bc2f018fb";
+//durée en jours
+const rentDuration = 90;
+
 const main = document.querySelector("main");
 
 // Récupération du formulaire
@@ -26,7 +30,7 @@ const gamesArray=new Array();
 //rempli le input select
 async function fetchData() {
   try {
-    const response = await fetch("https://api.npoint.io/33fe536f3a3bc2f018fb");
+    const response = await fetch(API_URL);
     const { games } = await response.json();
     
     games.forEach((element, index) => {
@@ -59,13 +63,7 @@ async function fetchData() {
 
 fetchData();
 
-
-
-
-
-
 main.append(card)
-
 
 // Fonction qui vérifie si un champ du formulaire est valide sinon affiche une class BS 
 const checkElement = (element) => {
@@ -87,35 +85,59 @@ const checkElement = (element) => {
           }
           case("returnDate"): {
             element.placeholder="La date est obligatoire."
-            invalidFeedbackMessage="La date doit être valide et supérieure à la date d'emprunt."
+            invalidFeedbackMessage=`La date de retour doit être valide, supérieure à la date d'emprunt, et la durée doit être inférieure à ${rentDuration} jours.`
             break;
           }
         }
-        const invalid = document.createElement("div")
-        invalid.innerHTML=invalidFeedbackMessage
-        invalid.classList.add("invalid-feedback")
-        element.parentElement.append(invalid)
-        
-      }
+        console.log(element.nextElementSibling)
+        // Vérifie si le message d'erreur pour la case à cocher a déjà été créé
+        console.log(element.valid)
+        if (element.nextElementSibling===null&&!element.valid) {
+          // Si le prochain élément est une étiquette, cela signifie que la case à cocher a une étiquette associée, donc le message d'erreur doit être ajouté après l'étiquette.
+          // Crée le message d'erreur
+          const invalid = document.createElement("div")
+          // Définit le message d'erreur avec la variable invalidFeedbackMessage
+          invalid.innerHTML=invalidFeedbackMessage
+          // Ajoute la classe « invalid-feedback » pour styliser le message d'erreur
+          invalid.classList.add("invalid-feedback")
+          // Ajoute le message d'erreur après l'élément parent de la case à cocher
+          element.parentElement.append(invalid)
+        } 
+      }   
       else {
+        console.log("Valide")
+        // Si l'élément est valide, supprime la classe « is-invalid » et l'attribut « placeholder »
         element.classList.remove("is-invalid")
         element.removeAttribute('placeholder')
       }
     }
-  }
-}
+   }
+ }
 
 
 
-const borrowDateValue = new Date(form.borrowDate.value);
-const returnDateValue = new Date(form.returnDate.value);
+let borrowDateValue = null;
+let returnDateValue = null;
 const today = new Date();
+const futureDate = new Date(today.getTime() + (rentDuration * 24 * 60 * 60 * 1000));
 
+borrowDateValue = today;
+borrowDateValue.setHours(23);
+borrowDateValue.setMinutes(59);
+borrowDateValue.setSeconds(59);
+borrowDateValue.setMilliseconds(999);
+const formattedDate = today.toISOString().slice(0, 10);
+form.borrowDate.value = formattedDate;
 
 // Ajout des écouteurs d'événements pour chaque champ du formulaire
-form.borrowDate.addEventListener("focusout", () => {
-  const borrowDateValue = new Date(form.borrowDate.value);
-  if (borrowDateValue >= today||isNaN(returnDateValue)) {
+form.borrowDate.addEventListener("change", () => {
+  borrowDateValue = new Date(form.borrowDate.value);
+  borrowDateValue.setHours(23);
+  borrowDateValue.setMinutes(59);
+  borrowDateValue.setSeconds(59);
+  borrowDateValue.setMilliseconds(999);
+  if (borrowDateValue < today||isNaN(borrowDateValue)) {
+    console.log("borrow invalid (c'est bon)")
     form.borrowDate.valid=false;
   } else {
     form.borrowDate.valid=true;
@@ -123,9 +145,19 @@ form.borrowDate.addEventListener("focusout", () => {
   checkElement(form.borrowDate);
 });
 
-form.returnDate.addEventListener("focusout", () => {
-  const returnDateValue = new Date(form.returnDate.value+"");
-  if (returnDateValue < borrowDateValue||isNaN(returnDateValue)) {
+form.returnDate.addEventListener("change", () => {
+  returnDateValue = new Date(form.returnDate.value);
+  returnDateValue.setHours(23);
+  returnDateValue.setMinutes(59);
+  returnDateValue.setSeconds(59);
+  returnDateValue.setMilliseconds(999);
+  console.log( "")
+  console.log('returnDateValue  : '+returnDateValue )
+  console.log('borrowDateValue  : '+borrowDateValue )
+  console.log('returnDateValue >= today : '+returnDateValue >= today)
+  console.log('isNaN(returnDateValue) : '+isNaN(returnDateValue))
+  if (borrowDateValue > returnDateValue || returnDateValue>futureDate||isNaN(returnDateValue)) {
+    console.log("return invalid (c'est bon)")
     form.returnDate.valid=false;
   } else {
     form.returnDate.valid=true;
